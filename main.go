@@ -8,8 +8,8 @@ import (
 )
 
 type task struct {
-	Id   int
-	Desc string
+	Id   int    `json:"id"`
+	Desc string `json:"desc"`
 }
 
 var tasks []task
@@ -117,16 +117,16 @@ func main() {
 		}
 
 	})
-	var t = task{
-		Id:   1,
-		Desc: "Task 1",
-	}
-	tasks = append(tasks, t)
-	var p = task{
-		Id:   2,
-		Desc: "Task 2",
-	}
-	tasks = append(tasks, p)
+	// var t = task{
+	// 	Id:   1,
+	// 	Desc: "Task 1",
+	// }
+	// tasks = append(tasks, t)
+	// var p = task{
+	// 	Id:   2,
+	// 	Desc: "Task 2",
+	// }
+	// tasks = append(tasks, p)
 	fmt.Println("Server running on http://localhost:8081")
 	log.Fatal(http.ListenAndServe(":8081", nil))
 }
