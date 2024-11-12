@@ -78,9 +78,9 @@ func Delete(w http.ResponseWriter, r *http.Request) {
 	http.Error(w, "Task not found", http.StatusNotFound)
 }
 func main() {
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprintln(w, "Welcome to My_TODO_API")
-	})
+	// http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+	// 	fmt.Fprintln(w, "Welcome to My_TODO_API")
+	// })
 	http.HandleFunc("/tasks/Add", func(w http.ResponseWriter, r *http.Request) {
 
 		if r.Method == http.MethodPost {
